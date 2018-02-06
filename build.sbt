@@ -16,11 +16,11 @@ val compilerOptions = Seq(
 )
 
 val iterateeVersion = "0.17.0"
-val catbirdVersion = "18.1.0"
+val catbirdVersion = "18.2.0"
 val disciplineVersion = "0.8"
 
 val scalaCheckVersion = "1.13.5"
-val scalaTestVersion = "3.0.4"
+val scalaTestVersion = "3.0.5"
 
 val baseSettings = Seq(
   scalacOptions ++= (compilerOptions :+ "-Yno-predef" :+ "-Ywarn-unused-import"),
