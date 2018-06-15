@@ -16,7 +16,7 @@ val compilerOptions = Seq(
 )
 
 val iterateeVersion = "0.17.0"
-val catbirdVersion = "18.5.0"
+val catbirdVersion = "18.6.0"
 val disciplineVersion = "0.9.0"
 
 val scalaCheckVersion = "1.13.5"
@@ -28,7 +28,7 @@ val baseSettings = Seq(
   scalacOptions in (Compile, test) ++= (compilerOptions :+ "-Ywarn-unused-import"),
   coverageHighlighting := true,
   (scalastyleSources in Compile) ++= (sourceDirectories in Compile).value,
-  addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.6" cross CrossVersion.binary)
+  addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.7" cross CrossVersion.binary)
 )
 
 lazy val allSettings = baseSettings ++ publishSettings
