@@ -15,8 +15,8 @@ val compilerOptions = Seq(
   "-Xfuture"
 )
 
-val iterateeVersion = "0.17.0"
-val catbirdVersion = "18.8.0"
+val iterateeVersion = "0.18.0"
+val catbirdVersion = "18.9.0"
 val disciplineVersion = "0.9.0"
 
 val scalaCheckVersion = "1.13.5"
@@ -54,6 +54,7 @@ lazy val twitter = project.in(file("."))
     libraryDependencies ++= Seq(
       "io.iteratee" %% "iteratee-files" % iterateeVersion,
       "io.iteratee" %% "iteratee-testing" % iterateeVersion % Test,
+      "io.catbird" %% "catbird-effect" % catbirdVersion,
       "io.catbird" %% "catbird-util" % catbirdVersion
     )
   )
