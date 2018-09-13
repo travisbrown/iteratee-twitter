@@ -1,17 +1,17 @@
 package io.iteratee.twitter
 
-import cats.MonadError
+import cats.effect.Sync
 import io.catbird.util.Rerunnable
-import io.iteratee.{ EnumerateeModule, EnumeratorErrorModule, IterateeErrorModule, Module }
-import io.iteratee.files.SuspendableFileModule
+import io.catbird.util.effect.rerunnableEffectInstance
+import io.iteratee.modules.{ EnumerateeModule, EnumeratorErrorModule, IterateeErrorModule, Module }
+import io.iteratee.files.modules.FileModule
 
 trait RerunnableModule extends Module[Rerunnable]
     with EnumerateeModule[Rerunnable]
     with EnumeratorErrorModule[Rerunnable, Throwable]
     with IterateeErrorModule[Rerunnable, Throwable]
-    with SuspendableFileModule[Rerunnable] {
-  final type M[f[_]] = MonadError[f, Throwable]
+    with FileModule[Rerunnable] {
+  final type M[f[_]] = Sync[f]
 
-  final protected val F: MonadError[Rerunnable, Throwable] = Rerunnable.rerunnableInstance
-  final override protected def captureEffect[A](a: => A): Rerunnable[A] = Rerunnable(a)
+  final protected val F: Sync[Rerunnable] = rerunnableEffectInstance
 }
