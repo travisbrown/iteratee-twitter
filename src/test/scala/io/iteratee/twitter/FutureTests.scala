@@ -2,7 +2,7 @@ package io.iteratee.twitter
 
 import cats.Eq
 import cats.laws.discipline.arbitrary.catsLawsCogenForThrowable
-import com.twitter.conversions.time._
+import com.twitter.conversions.DurationOps._
 import com.twitter.util.Future
 import io.catbird.util.{ futureEqWithFailure, twitterFutureInstance }
 import io.iteratee.testing.{ EnumerateeSuite, IterateeErrorSuite, ModuleSuite, StackSafeEnumeratorSuite }
