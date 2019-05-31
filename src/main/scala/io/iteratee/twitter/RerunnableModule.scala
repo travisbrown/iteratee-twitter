@@ -6,7 +6,8 @@ import io.catbird.util.effect.rerunnableEffectInstance
 import io.iteratee.modules.{ EnumerateeModule, EnumeratorErrorModule, IterateeErrorModule, Module }
 import io.iteratee.files.modules.FileModule
 
-trait RerunnableModule extends Module[Rerunnable]
+trait RerunnableModule
+    extends Module[Rerunnable]
     with EnumerateeModule[Rerunnable]
     with EnumeratorErrorModule[Rerunnable, Throwable]
     with IterateeErrorModule[Rerunnable, Throwable]

@@ -5,7 +5,8 @@ import com.twitter.util.Try
 import io.catbird.util.twitterTryInstance
 import io.iteratee.modules.{ EnumerateeModule, EnumeratorErrorModule, IterateeErrorModule, Module }
 
-trait TryModule extends Module[Try]
+trait TryModule
+    extends Module[Try]
     with EnumerateeModule[Try]
     with EnumeratorErrorModule[Try, Throwable]
     with IterateeErrorModule[Try, Throwable] {
