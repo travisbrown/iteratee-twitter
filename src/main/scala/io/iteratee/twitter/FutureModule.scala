@@ -5,7 +5,8 @@ import com.twitter.util.Future
 import io.catbird.util.twitterFutureInstance
 import io.iteratee.modules.{ EnumerateeModule, EnumeratorErrorModule, IterateeErrorModule, Module }
 
-trait FutureModule extends Module[Future]
+trait FutureModule
+    extends Module[Future]
     with EnumerateeModule[Future]
     with EnumeratorErrorModule[Future, Throwable]
     with IterateeErrorModule[Future, Throwable] {

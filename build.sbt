@@ -4,7 +4,8 @@ organization in ThisBuild := "io.iteratee"
 
 val compilerOptions = Seq(
   "-deprecation",
-  "-encoding", "UTF-8",
+  "-encoding",
+  "UTF-8",
   "-feature",
   "-language:existentials",
   "-language:higherKinds",
@@ -16,7 +17,7 @@ val compilerOptions = Seq(
 )
 
 val iterateeVersion = "0.18.0"
-val catbirdVersion = "19.5.0"
+val catbirdVersion = "19.5.1"
 val disciplineVersion = "0.9.0"
 
 val scalaCheckVersion = "1.13.5"
@@ -28,7 +29,7 @@ val baseSettings = Seq(
   scalacOptions in (Compile, test) ++= (compilerOptions :+ "-Ywarn-unused-import"),
   coverageHighlighting := true,
   (scalastyleSources in Compile) ++= (sourceDirectories in Compile).value,
-  addCompilerPlugin("org.typelevel" % "kind-projector" % "0.10.1" cross CrossVersion.binary)
+  addCompilerPlugin("org.typelevel" % "kind-projector" % "0.10.2" cross CrossVersion.binary)
 )
 
 lazy val allSettings = baseSettings ++ publishSettings
@@ -38,13 +39,16 @@ lazy val docSettings = Seq(
   scalacOptions in (Compile, doc) ++= Seq(
     "-groups",
     "-implicits",
-    "-doc-source-url", scmInfo.value.get.browseUrl + "/tree/master€{FILE_PATH}.scala",
-    "-sourcepath", baseDirectory.in(LocalRootProject).value.getAbsolutePath
+    "-doc-source-url",
+    scmInfo.value.get.browseUrl + "/tree/master€{FILE_PATH}.scala",
+    "-sourcepath",
+    baseDirectory.in(LocalRootProject).value.getAbsolutePath
   ),
   git.remoteRepo := "git@github.com:travisbrown/iteratee-twitter.git"
 )
 
-lazy val twitter = project.in(file("."))
+lazy val twitter = project
+  .in(file("."))
   .enablePlugins(GhpagesPlugin, SiteScaladocPlugin)
   .configs(IntegrationTest)
   .settings(allSettings ++ Defaults.itSettings)
@@ -66,13 +70,15 @@ lazy val publishSettings = Seq(
   licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
   publishMavenStyle := true,
   publishArtifact in Test := false,
-  pomIncludeRepository := { _ => false },
+  pomIncludeRepository := { _ =>
+    false
+  },
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (isSnapshot.value)
       Some("snapshots" at nexus + "content/repositories/snapshots")
     else
-      Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+      Some("releases" at nexus + "service/local/staging/deploy/maven2")
   },
   autoAPIMappings := true,
   apiURL := Some(url("https://travisbrown.github.io/iteratee-twitter/api/")),
@@ -103,11 +109,11 @@ credentials ++= (
   for {
     username <- Option(System.getenv().get("SONATYPE_USERNAME"))
     password <- Option(System.getenv().get("SONATYPE_PASSWORD"))
-  } yield Credentials(
-    "Sonatype Nexus Repository Manager",
-    "oss.sonatype.org",
-    username,
-    password
-  )
+  } yield
+    Credentials(
+      "Sonatype Nexus Repository Manager",
+      "oss.sonatype.org",
+      username,
+      password
+    )
 ).toSeq
-
