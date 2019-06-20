@@ -21,7 +21,7 @@ val catbirdVersion = "19.5.1"
 val disciplineVersion = "0.9.0"
 
 val scalaCheckVersion = "1.13.5"
-val scalaTestVersion = "3.0.8-RC2"
+val scalaTestVersion = "3.0.8"
 
 val baseSettings = Seq(
   scalacOptions ++= (compilerOptions :+ "-Yno-predef" :+ "-Ywarn-unused-import"),
