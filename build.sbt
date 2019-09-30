@@ -16,7 +16,7 @@ val compilerOptions = Seq(
   "-Xfuture"
 )
 
-val iterateeVersion = "0.18.0"
+val iterateeVersion = "0.19.0"
 val catbirdVersion = "19.9.0"
 val disciplineVersion = "0.9.0"
 
