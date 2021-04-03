@@ -17,7 +17,7 @@ val compilerOptions = Seq(
 )
 
 val iterateeVersion = "0.19.0"
-val catbirdVersion = "20.10.0"
+val catbirdVersion = "21.2.0"
 val disciplineVersion = "0.9.0"
 
 val scalaCheckVersion = "1.13.5"
