@@ -1,6 +1,6 @@
 # iteratee-twitter
 
-[![Build status](https://img.shields.io/travis/travisbrown/iteratee-twitter/master.svg)](https://travis-ci.org/travisbrown/iteratee-twitter)
+[![Build status](https://img.shields.io/github/workflow/status/travisbrown/iteratee-twitter/Continuous%20Integration.svg)](https://github.com/travisbrown/iteratee-twitter/actions)
 [![Coverage status](https://img.shields.io/codecov/c/github/travisbrown/iteratee-twitter/master.svg)](https://codecov.io/github/travisbrown/iteratee-twitter)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-green.svg)](https://gitter.im/travisbrown/iteratee)
 [![Maven Central](https://img.shields.io/maven-central/v/io.iteratee/iteratee-twitter_2.11.svg)](https://maven-badges.herokuapp.com/maven-central/io.iteratee/iteratee-twitter_2.11)
