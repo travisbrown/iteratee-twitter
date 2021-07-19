@@ -27,23 +27,21 @@ val compilerOptions = Seq(
   "-language:existentials",
   "-language:higherKinds",
   "-unchecked",
-  "-Yno-adapted-args",
   "-Ywarn-dead-code",
   "-Ywarn-numeric-widen",
   "-Xfuture"
 )
 
 val iterateeVersion = "0.20.0"
-val catbirdVersion = "21.2.0"
-val disciplineVersion = "0.9.0"
+val catbirdVersion = "21.5.0"
 
 val scalaCheckVersion = "1.15.4"
 val scalaTestVersion = "3.2.9"
 
 val baseSettings = Seq(
-  scalacOptions ++= (compilerOptions :+ "-Yno-predef" :+ "-Ywarn-unused-import"),
+  scalacOptions ++= (compilerOptions :+ "-Yno-predef"),
   Compile / console / scalacOptions ++= compilerOptions,
-  Compile / test / scalacOptions ++= (compilerOptions :+ "-Ywarn-unused-import"),
+  Compile / test / scalacOptions ++= compilerOptions,
   coverageHighlighting := true,
   Compile / scalastyleSources ++= (Compile / sourceDirectories).value,
   addCompilerPlugin(("org.typelevel" % "kind-projector" % "0.13.0").cross(CrossVersion.full))
@@ -75,7 +73,7 @@ lazy val twitter = project
     libraryDependencies ++= Seq(
       "io.iteratee" %% "iteratee-files" % iterateeVersion,
       "io.iteratee" %% "iteratee-testing" % iterateeVersion % Test,
-      "io.catbird" %% "catbird-effect" % catbirdVersion,
+      "io.catbird" %% "catbird-effect3" % catbirdVersion,
       "io.catbird" %% "catbird-util" % catbirdVersion
     )
   )
