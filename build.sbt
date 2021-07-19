@@ -46,7 +46,7 @@ val baseSettings = Seq(
   Compile / test / scalacOptions ++= (compilerOptions :+ "-Ywarn-unused-import"),
   coverageHighlighting := true,
   Compile / scalastyleSources ++= (Compile / sourceDirectories).value,
-  addCompilerPlugin(("org.typelevel" % "kind-projector" % "0.13.0").cross(CrossVersion.binary))
+  addCompilerPlugin(("org.typelevel" % "kind-projector" % "0.13.0").cross(CrossVersion.full))
 )
 
 lazy val allSettings = baseSettings ++ publishSettings
