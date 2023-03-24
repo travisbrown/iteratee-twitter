@@ -33,7 +33,7 @@ val compilerOptions = Seq(
 )
 
 val iterateeVersion = "0.20.0"
-val catbirdVersion = "21.8.0"
+val catbirdVersion = "22.12.0"
 
 val scalaCheckVersion = "1.15.4"
 val scalaTestVersion = "3.2.9"
@@ -73,8 +73,8 @@ lazy val twitter = project
     libraryDependencies ++= Seq(
       "io.iteratee" %% "iteratee-files" % iterateeVersion,
       "io.iteratee" %% "iteratee-testing" % iterateeVersion % Test,
-      "io.catbird" %% "catbird-effect3" % catbirdVersion,
-      "io.catbird" %% "catbird-util" % catbirdVersion
+      "org.typelevel" %% "catbird-effect3" % catbirdVersion,
+      "org.typelevel" %% "catbird-util" % catbirdVersion
     )
   )
 
